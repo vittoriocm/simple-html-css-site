@@ -1,0 +1,219 @@
+* {
+    /*border: red 1px solid;*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: hsl(37, 8%, 97%);
+}
+
+
+/* Header */
+
+.top-nav {
+    position: sticky;
+    top: 0;
+    padding: 0.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #222222;
+    z-index: 3;
+    color: white;
+}
+
+.nav-bar a {
+    padding: 0 1rem;
+    font-size: 1.1rem;
+}
+
+.nav-bar a:link,
+.nav-bar a:visited {
+    color: white;
+}
+.nav-bar a:hover {
+    color: lightgrey;
+}
+.nav-bar a:active {
+    color: red;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    align-items: center;
+    height: 4rem;
+    width: 4rem;
+}
+
+@media only screen and (max-width: 700px) {
+    .top-nav {
+        position: static;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .logo, .nav-bar {
+        margin: 1rem 0;
+    }
+}
+
+/* Hero */
+
+.hero, .hero-overlay, .hero-text {
+    height: 20rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.hero {
+    background-image: url("hero.jpg");
+    background-size: cover;
+}
+
+.hero-overlay {
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.40);
+    position: absolute;
+}
+
+.hero-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    position: absolute;
+    font-size: 1.8rem;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+}
+
+
+/* Main Body*/
+main, footer {
+    width: 80%;
+}
+
+main {
+    display: block;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width: 700px) {
+    main {
+        width: 100%;
+    }
+}
+
+/* Gallery */
+
+#gallery {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 5rem;
+}
+
+figure {
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+}
+
+figcaption {
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 700px) {
+    #gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Club Info + Pricing */
+
+#club-info, #pricing{
+    display: flex;
+    justify-content: center;
+}
+
+.club-info-box, .pricing-box{
+    display: flex;
+    padding: 0.75rem;
+    border-radius:0.5rem;
+    background-color: white;
+    box-shadow: 0 0 0.5rem 0.1rem lightgrey;
+    align-items: center;
+    column-gap: 2rem;
+
+    margin-bottom: 2rem;
+}
+
+.contact-info {
+    display: grid;
+    place-items: center; 
+    grid-template-columns: 1fr;
+}
+
+.club-info-box img , .pricing-box img{
+    max-width: 70%;
+    border-radius: 0.5rem;
+}
+
+.contact-info h2, .pricing-deets h2 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.pricing-deets {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.contact-info .info{
+    text-align: center;
+}
+
+.contact-info .info, .pricing-deets p {
+    margin: 1rem 0;
+}
+
+@media only screen and (max-width: 700px) {
+    .club-info-box {
+        display: grid;
+        grid-template-columns: 1fr;
+        place-items: center;
+        gap: 1rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    
+    .club-info-box img {
+        max-width: 100%;
+    }
+    
+    .pricing-box img{
+        display:none;
+    }
+}
+
+/* Footer */
+footer {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+}
